@@ -59,10 +59,14 @@ export default function App() {
     if(tempArray[2][0]===currentTurn && tempArray[2][1]===currentTurn && tempArray[2][2]===currentTurn){
       winStatus=true
      }   
-    //if [1,0] [1,1] [1,2] All same color then currentTurn win
-    if(tempArray[1][0]===currentTurn && tempArray[1][1]===currentTurn && tempArray[1][2]===currentTurn){
-      winStatus=true
-     }     
+     //if [1,0] [1,1] [1,2] All same color then currentTurn win
+     if(tempArray[1][0]===currentTurn && tempArray[1][1]===currentTurn && tempArray[1][2]===currentTurn){
+       winStatus=true
+      }   
+      //if [0,2] [1,1] [2,0] All same color then currentTurn win
+      if(tempArray[0][2]===currentTurn && tempArray[1][1]===currentTurn && tempArray[2][0]===currentTurn){
+        winStatus=true
+       }     
       if(winStatus){
        alert(`${currentTurn} WINNER`)
         resetGame()
