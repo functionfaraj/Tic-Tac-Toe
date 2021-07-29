@@ -38,39 +38,33 @@ export default function App() {
       //if [0,0] [0,1] [0,2] All same color then currentTurn win
       if(tempArray[0][0]===currentTurn && tempArray[0][1]===currentTurn && tempArray[0][2]===currentTurn){
         winStatus=true
-        alert(`${currentTurn} WINNER`)
       }
        //if [0,0] [1,0] [2,0] All same color then currentTurn win
        if(tempArray[0][0]===currentTurn && tempArray[1][0]===currentTurn && tempArray[2][0]===currentTurn){
         winStatus=true
-        alert(`${currentTurn} WINNER`)
       }
       //if [0,0] [1,1] [2,2] All same color then currentTurn win
       if(tempArray[0][0]===currentTurn && tempArray[1][1]===currentTurn && tempArray[2][2]===currentTurn){
        winStatus=true
-       alert(`${currentTurn} WINNER`)
      }      
      //if [0,1] [1,1] [2,1] All same color then currentTurn win
      if(tempArray[0][1]===currentTurn && tempArray[1][1]===currentTurn && tempArray[2][1]===currentTurn){
       winStatus=true
-      alert(`${currentTurn} WINNER`)
     }        
     //if [0,2] [1,2] [2,2] All same color then currentTurn win
     if(tempArray[0][2]===currentTurn && tempArray[1][2]===currentTurn && tempArray[2][2]===currentTurn){
      winStatus=true
-     alert(`${currentTurn} WINNER`)
     }
     //if [2,0] [2,1] [2,2] All same color then currentTurn win
     if(tempArray[2][0]===currentTurn && tempArray[2][1]===currentTurn && tempArray[2][2]===currentTurn){
       winStatus=true
-      alert(`${currentTurn} WINNER`)
      }   
     //if [1,0] [1,1] [1,2] All same color then currentTurn win
     if(tempArray[1][0]===currentTurn && tempArray[1][1]===currentTurn && tempArray[1][2]===currentTurn){
       winStatus=true
-      alert(`${currentTurn} WINNER`)
      }     
       if(winStatus){
+       alert(`${currentTurn} WINNER`)
         resetGame()
       }else{
         changeTurn()
@@ -92,17 +86,17 @@ export default function App() {
           <TouchableOpacity
           onPress={()=>onSelect(row,0)}
           >
-          <View style={[styles.gameBox,game[row][0] == RED ? styles.redBg :game[row][0] == BLUE ? styles.blueBg :null ]} ><Text>{row} 0</Text></View>
+          <View style={[styles.gameBox,game[row][0] == RED ? styles.redBg :game[row][0] == BLUE ? styles.blueBg :null ]} />
           </TouchableOpacity>
           <TouchableOpacity
           onPress={()=>onSelect(row,1)}
           >
-          <View style={[styles.gameBox,game[row][1] == RED ? styles.redBg :game[row][1] == BLUE ? styles.blueBg :null ]}  ><Text>{row} 1</Text></View>
+          <View style={[styles.gameBox,game[row][1] == RED ? styles.redBg :game[row][1] == BLUE ? styles.blueBg :null ]}  />
           </TouchableOpacity>
           <TouchableOpacity
           onPress={()=>onSelect(row,2)}
           >
-          <View style={[styles.gameBox,game[row][2] == RED ? styles.redBg :game[row][2] == BLUE ? styles.blueBg :null ]}  ><Text>{row} 2</Text></View>
+          <View style={[styles.gameBox,game[row][2] == RED ? styles.redBg :game[row][2] == BLUE ? styles.blueBg :null ]} />
           </TouchableOpacity>
         </View>)
       })
